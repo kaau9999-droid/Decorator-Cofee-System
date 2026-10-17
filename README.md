@@ -1,52 +1,69 @@
 # Decorator Pattern — Coffee Ordering System
 
-A Java implementation of the Decorator design pattern, based on the coffee
-ordering example: a base `Espresso` is wrapped in `MilkDecorator`,
-`SugarDecorator`, and `WhippedCreamDecorator` to build up description and
-price dynamically at runtime.
+A Java implementation of the Decorator Design Pattern using a coffee ordering system.
 
-## Structure
+The application allows customers to add milk, sugar, and whipped cream dynamically without modifying the original Espresso class.
 
-```
-DecoratorPatternDemo/
-├── src/
-│   ├── Beverage.java              # Component interface
-│   ├── Espresso.java              # Concrete Component
-│   ├── BeverageDecorator.java     # Abstract Decorator
-│   ├── MilkDecorator.java         # Concrete Decorator (+$0.50)
-│   ├── SugarDecorator.java        # Concrete Decorator (+$0.20)
-│   ├── WhippedCreamDecorator.java # Concrete Decorator (+$0.70)
-│   └── Main.java                  # Client code / entry point
-└── README.md
-```
+## Project Structure
 
-## Run it in VS Code
+All Java source files are located in the root directory.
 
-1. Open this folder in VS Code (`File > Open Folder...`).
-2. Install the **Extension Pack for Java** (Microsoft) if you don't have it —
-   VS Code will usually prompt you automatically.
-3. Open `src/Main.java` and click **Run** above the `main` method
-   (or press `F5`).
+- Beverage.java — Component interface
+- Espresso.java — Concrete Component
+- BeverageDecorator.java — Abstract Decorator
+- MilkDecorator.java — Adds $0.50
+- SugarDecorator.java — Adds $0.20
+- WhippedCreamDecorator.java — Adds $0.70
+- Main.java — Main application
+- README.md — Project documentation
 
-## Run it from the terminal
+## Requirements
 
-Requires a JDK (11+) on your PATH.
+- Java JDK 21 or compatible version
+- Windows or another operating system supporting Java
 
-```bash
-cd DecoratorPatternDemo
-javac -d bin src/*.java
-java -cp bin Main
-```
+## How to Run
 
-## Expected output
+Open Command Prompt in the project directory containing the Java files.
 
-```
+Compile the Java source files:
+
+cmd
+javac *.java
+
+
+Run the application:
+
+cmd
+java Main
+
+
+## Expected Output
+
+text
 Espresso, Milk, Sugar, Whipped Cream
-Cost: $3.4
-```
+Cost: $3.40
 
-## Try extending it
 
-Add a `CaramelDecorator` following the same shape as `MilkDecorator`
-(+$0.60, appends ", Caramel") without touching any existing class —
-that's the Open/Closed Principle in action.
+## How It Works
+
+1. Create an Espresso costing $2.00.
+2. Add MilkDecorator (+$0.50).
+3. Add SugarDecorator (+$0.20).
+4. Add WhippedCreamDecorator (+$0.70).
+5. Display the final description and total cost.
+
+## Advantages
+
+- Adds responsibilities dynamically at runtime.
+- Avoids creating many subclasses.
+- Supports the Open/Closed Principle.
+- Promotes composition over inheritance.
+
+## Possible Extension
+
+A CaramelDecorator can be added to provide another optional ingredient without modifying existing classes.
+
+## Conclusion
+
+The Decorator Pattern provides a flexible solution for adding optional features to objects while keeping the original classes unchanged.
