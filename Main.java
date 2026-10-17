@@ -7,6 +7,6 @@ public class Main {
         coffee = new WhippedCreamDecorator(coffee);
 
         System.out.println(coffee.getDescription());
-        System.out.println("Cost: $" + coffee.cost());
+        System.out.printf(java.util.Locale.US, "Cost: $%.2f%n", coffee.cost());;
     }
 }
