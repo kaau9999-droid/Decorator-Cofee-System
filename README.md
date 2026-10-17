@@ -28,21 +28,24 @@ Open Command Prompt in the project directory containing the Java files.
 
 Compile the Java source files:
 
-cmd
+
 javac *.java
 
 
 Run the application:
 
-cmd
 java Main
+
 
 
 ## Expected Output
 
-text
+```text
 Espresso, Milk, Sugar, Whipped Cream
 Cost: $3.40
+```
+
+
 
 
 ## How It Works
